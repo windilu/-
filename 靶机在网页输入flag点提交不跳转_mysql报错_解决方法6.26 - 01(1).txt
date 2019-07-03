@@ -1,0 +1,9 @@
+之前拉走的靶机在网页输入flag点击提交没有反应，不会跳转到下一关，mysql报错,老师给了解决方法和材料。
+安装Xftp，新建会话（需要开启靶机），输入靶机地址并连接靶机【可参考百度经验——Windows下XShell中的Xftp工具配置及使用https://jingyan.baidu.com/article/b0b63dbf2a3f3a4a49307043.html】，连接完成，一开始是在靶机的/root目录下，需要自己打开/phpstudy/www，在此目录下有一个web文件夹，用把老师给的web压缩包解压，用里面的web文件夹覆盖靶机里面的。
+完成后在网页输入flag点击提交可以正常跳转到下一关。
+
+mysql报错的问题把mysqldump里面内容在mysql执行一次或者导入这个sql文档到数据库
+上传如果遇到上传不成功,
+chmod 777 /phpstudy//www/web/Upload*
+
+把mysqldump.sql用Xftp复制到靶机里面，路径无所谓，然后在靶机中输入命令：mysql -uroot -p < /XXX/.../XXX/mysqldump.sql【参考mysql中如何在命令行中，执行一个SQL脚本文件？——https://www.cnblogs.com/chuanzhang053/p/8608240.html?tdsourcetag=s_pcqq_aiomsg】，在Enter password:后面输入MySQL的密码mysqladmin，这个密码在老师给的web文件夹中的sql.php里面找到【原句为：$db_connect=mysql_connect("localhost:3306","root","mysqladmin")】，执行后没有任何输出，但sql2已可正常使用。

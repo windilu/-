@@ -1,0 +1,5 @@
+VM上装两个环境：
+
+一个是window server 2008 + sql server 2008；（https://msdn.itellyou.cn/）
+
+一个是CentOS + Mysql（最新版本，官网）
